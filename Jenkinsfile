@@ -16,7 +16,7 @@ pipeline {
                 sh 'echo hewo'
               sh 'node -v'
               sh 'npm install'
-              sh 'ng serve'
+              sh 'ng build'
             }
         }
     }
