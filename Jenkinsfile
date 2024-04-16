@@ -19,5 +19,25 @@ pipeline {
               sh 'ng build'
             }
         }
+       stage('Deploy to S3 From Develop') {
+    
+        steps {
+          script {
+            // def deployTargets = [
+            //   [env: 'dev', regions: [[region: 'us-east-2']], askForPermission: false, artiRepo: 'drc-dev', acct: 'leAcctNum', s3Bucket: 's3_BUCKET', acctNum: 'leAcctNum', approvers: 'approvers'],
+            // ]
+            
+          withAWS(region: "reigon") {
+            s3Upload(
+              bucket: "s3Bucket",
+              file: 'dist',
+              path: "all/angtest",
+              cacheControl: 'no-cache'
+            )
+          }
+          }
+        }
+    }
+
     }
 }
