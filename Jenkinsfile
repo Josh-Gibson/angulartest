@@ -29,7 +29,7 @@ pipeline {
             
           withAWS(region: "us-east-1") {
             s3Upload(
-              bucket: "s3Bucket",
+              bucket: "testbucket-an",
               file: 'dist',
               path: "all/angtest",
               cacheControl: 'no-cache'
