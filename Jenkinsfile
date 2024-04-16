@@ -27,7 +27,7 @@ pipeline {
             //   [env: 'dev', regions: [[region: 'us-east-2']], askForPermission: false, artiRepo: 'drc-dev', acct: 'leAcctNum', s3Bucket: 's3_BUCKET', acctNum: 'leAcctNum', approvers: 'approvers'],
             // ]
             
-          withAWS(region: "reigon") {
+          withAWS(region: "us-east-1") {
             s3Upload(
               bucket: "s3Bucket",
               file: 'dist',
